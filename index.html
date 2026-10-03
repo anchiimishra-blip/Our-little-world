@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For capsicum 🫑♡</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- INTRO SCREEN -->
+    <section id="intro" class="screen active">
+
+        <div class="card">
+            <p class="small-text">hey babie ♡</p>
+
+            <h1>I wrote a letter,just for u ;).</h1>
+
+            <p>
+                But vanshu,before you get to the good part...
+                you have a few things to do 👀.
+            </p>
+
+            <button onclick="showScreen('quiz1')">
+                Let's begin ♡
+            </button>
+        </div>
+
+    </section>
+
+
+    <!-- QUIZ 1 -->
+    <section id="quiz1" class="screen">
+
+        <div class="card">
+
+            <p class="small-text">Question 01</p>
+
+            <h1>Do you love me?</h1>
+
+     <div class="buttons">
+    <button onclick="showScreen('quiz2'); loadQuizQuestion()">
+    Yes ♡
+    </button>
+
+    <button id="noButton" onclick="noAnswer()">
+        No
+    </button>    
+  </div>
+
+  <p id="no-message"></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- QUIZ 2 -->
+  <section id="quiz2" class="screen">
+
+    <div class="card">
+
+        <p class="small-text">Question 02</p>
+
+        <h1 id="question">How well do you know me? 👀</h1>
+
+        <div class="buttons" id="answerButtons">
+
+            <button onclick="answerQuiz(0)">
+                Very well 😌
+            </button>
+
+            <button onclick="answerQuiz(1)">
+                Pretty well 👀
+            </button>
+
+            <button onclick="answerQuiz(2)">
+                I'm about to find out 💀
+            </button>
+
+        </div>
+
+        <p id="quiz-message"></p>
+
+    </div>
+
+  </section>
+
+
+    <!-- QUIZ 3 -->
+    <section id="quiz3" class="screen">
+
+        <div class="card">
+
+            <p class="small-text">Question 03</p>
+
+            <h1>Ready for the games?</h1>
+
+            <button onclick="showScreen('game1')">
+                Bring it on →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- GAME 1 PLACEHOLDER -->
+    <section id="game1" class="screen">
+    <div class="game-card">
+        <p class="small-text">Game 01</p>
+
+        <h1>Catch the dudu 🍼</h1>
+
+        <p>
+            Catch 10 dudu's 🍼 to continue... 👀
+        </p>
+
+        <div class="score">
+            🍼: <span id="score">0</span>/10
+        </div>
+
+        <div id="gameArea">
+            <div id="basket">🫴🏻</div>
+        </div>
+
+        <p id="gameMessage"></p>
+    </div>
+    </section>
+
+<section id="game1Congrats" class="screen">
+    <div class="card">
+        <p class="small-text">Game 01 complete ♡</p>
+
+        <h1>YOU DID ITTT 😭🍼</h1>
+
+        <p>
+            You caught all the milk bottles!! 👀💗
+            <br>
+            get ready for the next one😎.
+        </p>
+
+        <button onclick="showScreen('game2')">
+            Next game ♡
+        </button>
+    </div>
+</section>
+  
+<!-- GAME 2 WILL GO HERE LATER -->
+<section id="game2" class="screen">
+
+    <div class="game-card">
+
+        <p class="small-text">Game 02</p>
+
+        <h1>Memory Match 👀</h1>
+
+        <p>
+            Find all the matching pairs to continue 💗
+        </p>
+
+        <div id="memoryBoard"></div>
+
+        <p id="memoryMessage"></p>
+
+        <button
+            id="game2Next"
+            onclick="showScreen('scratchRoom')"
+            style="display:none;">
+            Continue ♡
+        </button>
+
+    </div>
+
+</section>
+
+
+ <section id="scratchRoom" class="screen">
+
+    <div class="scratch-container">
+
+        <p class="small-text">a few little messages♡</p>
+
+        <h1>Scratch them open ✨</h1>
+
+        <p class="scratch-intro">
+            There's something waiting underneath each one...
+        </p>
+
+        <div class="web-decoration top-web">🕷️</div>
+
+        <div id="scratchCards"></div>
+
+        <p id="scratchProgress">
+            0 of 6 uncovered
+        </p>
+
+        <button id="letterButton"
+                onclick="showScreen('letter')"
+                style="display:none;">
+            Read my letter ♡
+        </button>
+
+    </div>
+
+ </section>
+  
+
+<!-- LOVE LETTER WILL GO HERE LATER -->
+
+<section id="letter" class="screen">
+
+    <div class="letter-stage">
+
+        <!-- Envelope / opening screen -->
+        <div id="envelopeScreen" class="letter-step">
+
+            <p class="small-text">one last thing ♡</p>
+
+            <div class="envelope" onclick="openEnvelope()">
+
+                <div class="envelope-back"></div>
+
+                <div class="envelope-paper">
+                    <span>Happy Boyfriend's Day ♡</span>
+                </div>
+
+                <div class="envelope-flap"></div>
+
+                <div class="envelope-heart">
+                    ♡
+                </div>
+
+            </div>
+
+            <p class="tap-hint">
+                tap the envelope ♡
+            </p>
+
+        </div>
+
+
+        <!-- Happy Boyfriend's Day card -->
+        <div id="boyfriendDayScreen"
+             class="letter-step"
+             style="display:none;">
+
+            <div class="boyfriend-card"
+                 onclick="openLetter()">
+
+                <div class="seal">♡</div>
+
+                <p class="letter-date">
+                    03 . 10 . 2026
+                </p>
+
+                <h1 class="happy-title">
+                    Happy
+                </h1>
+
+                <div class="script-title">
+                    Boyfriend's Day
+                </div>
+
+                <div class="card-bottom-line"></div>
+
+                <p class="tap-hint">
+                    tap to open ♡
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Actual letter -->
+        <div id="actualLetterScreen"
+             class="letter-step"
+             style="display:none;">
+
+            <div class="actual-letter">
+
+                <div class="letter-seal">
+                    ♡
+                </div>
+
+                <p class="letter-date">
+                    03 . 10 . 2026
+                </p>
+
+                <h2 class="dear-title">
+                    Dear Vanshu,
+                </h2>
+
+                <div class="letter-text">
+
+                    <p>
+                       I don't think I'll ever have the right words for how much I love you. 
+                    </p>
+
+                    <p>
+                      But if I had to try, I'd say that somewhere between our late-night games, our silly little arguments, our random conversations, and all the ordinary moments in between, you quietly became one of the most beautiful parts of my life. Your presence itself is enough to make my life feel ten times better.
+                    </p>
+
+                    <p>
+                    I love the little things about us the way my heart still flutters when I see your text saying “hello dw,” the silly little arguments we have, and how, even after them, we're still there for each other. I love the way you explain things to me over and over again when I don't understand, the way you take care of me, and the way you always make me feel loved, seen, and heard.
+                    </p
+                    <p>
+                    And somehow, you've become a part of my ordinary moments too. I'll be sitting in chemistry class, talking to my friends, or watching my favourite show, and somehow, there'll be this little thought of you in the middle of it all. It's funny how someone can become such a beautiful part of your life without you even realizing when it happened.
+                    </p>
+                      <p>
+                      Also Vanshu, I hope you know that you never have to be a certain way for me to love you.
+You don't have to be entertaining every day,You don't have to be happy every day,You can be quiet,tired, overwhelmed..
+You can be completely and unapologetically you.
+I'll still love you.
+Because my love for you was never about what you can give me.
+It's about who you are.
+Your kind heart.
+The way you think.
+The way you care.
+Your lovely soul.
+I don't need a reason to love you.
+I just do.                     
+                    </p>
+                    <p>
+somehow, in this huge world full of people, I got lucky enough to find you.
+Mere gande capsicum bacche, mommy loves you. 🫂💗
+More than I can put into words.
+More than this little letter could ever hold.
+
+So whenever you read this, I hope you remember one thing:
+there is a girl somewhere who is endlessly grateful that you exist, and who will always look at you and think 
+“that's my person"
+I love you so so much.
+                    </p>
+                </div>
+
+                <div class="letter-signature">
+                    With love, ♡<br>
+                    Garlic
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+  
+<script src="script.js"></script>
+</body>
+</html>
